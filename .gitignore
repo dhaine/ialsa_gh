@@ -1,0 +1,7 @@
+/.projectile
+
+*~
+.#*
+
+# no R history
+.Rhistory
