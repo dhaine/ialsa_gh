@@ -37,11 +37,15 @@ library(tidyverse)
 
 - `r length(study_network$acronym)` IALSA studies
 - `r length(athlos_studies$acronym)` ATHLOS studies
-- `r nrow(athlos_studies %>% filter(acronym %in% study_network$acronym) %>% select(acronym))` ATHLOS studies not in IALSA (ALSA, ELSA, HRS, LASA, SHARE, TILDA)
+- `r nrow(athlos_studies %>% filter(!(acronym %in% study_network$acronym)) %>%
+  select(acronym))` ATHLOS studies not in IALSA (ATTICA, CHARLS, COURAGE in
+  Europe, 10/66, ENRICA, HAPIEE, JSTAR, SAGE)
 - `r length(mindmap_studies$acronym)` MINDMAP studies
-- `r nrow(mindmap_studies %>% filter(acronym %in% study_network$acronym) %>% select(acronym))` MINDMAP studies not in IALSA (CLSA, LASA)
+- `r nrow(mindmap_studies %>% filter(!(acronym %in% study_network$acronym)) %>%
+  select(acronym))` MINDMAP studies not in IALSA (GLOBE, HAPIEE, HUNT, LUCAS,
+  MESA Neighbourhood, RECORD, RS, TLS)
 - `r length(near_studies$acronym)` NEAR studies
-- `r nrow(near_studies %>% filter(acronym %in% study_network$acronym) %>% select(acronym))` NEAR studies not in IALSA (Betula, GENDER, H-70, KP, OCTO-Twin, SATSA, SNAC-K, SWEOLD)
+- `r nrow(near_studies %>% filter(!(acronym %in% study_network$acronym)) %>% select(acronym))` NEAR studies not in IALSA (COSM, SMC)
 
 ---
 # Participants
